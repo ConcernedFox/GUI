@@ -1,0 +1,20 @@
+from tkinter import*
+root = Tk()
+root.title("Tkinker conversions")
+root.geometry("400x400")
+root.configure(background = "red")
+leaf = Label(root, text = "Kilograms", fg = "black")
+stem = Label(root, text = "Grams", fg = "black")
+flower = Entry(root, width = "30")
+pollen = Entry(root, width = "100")
+def Convert():
+    cell = float(flower.get())*1000
+    print(cell)
+    pollen.insert(END, cell)
+stalk = Button(root, text = "Convert", bd = 4, fg = "blue", command = Convert)
+leaf.place(x = 150, y = 75)
+stem.place(x = 150, y = 175)
+flower.place(x = 250, y = 75)
+pollen.place(x = 250, y = 175)
+stalk.place(x = 40, y = 75)
+root.mainloop()
