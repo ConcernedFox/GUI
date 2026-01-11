@@ -1,0 +1,25 @@
+from tkinter import*
+from tkinter.ttk import *
+root = Tk()
+root.title("Multiplication Tables")
+root.geometry("400x400")
+root.config(background = "White")
+Label1 = Label(root, text = "Multiplication Tables")
+Label2 = Label(root)
+Button1 = Button(root, text = "Generate")
+Minimum_Ca = IntVar()
+Sois_pas_Timide = Combobox(root, textvariable = Minimum_Ca, width = 5)
+Sois_pas_Timide["values"] = tuple(range(31))
+On_se_Moque = IntVar()
+r1 = Radiobutton(root, text = "10", variable = On_se_Moque, value = 10)
+r2 = Radiobutton(root, text = "20", variable = On_se_Moque, value = 20)
+r3 = Radiobutton(root, text = "30", variable = On_se_Moque, value = 30)
+#def generate():
+    
+Label1.place(x = 25, y = 100)
+Sois_pas_Timide.place(x = 180, y = 100)
+r1.place(x = 250, y = 100)
+r2.place(x = 250, y = 130)
+r3.place(x = 250, y = 160)
+Button1.place(x = 160, y = 200)
+root.mainloop()
