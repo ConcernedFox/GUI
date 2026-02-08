@@ -13,9 +13,22 @@ Entry3 = Entry(root, width = 30)
 def add():
     Listbox1.insert(END,Entry1.get() + ", by " + Entry2.get() + ", Book " + Entry3.get())
     Entry1.delete(0, END)
+    Entry2.delete(0, END)
+    Entry3.delete(0, END)
+def issue():
+    Index = Listbox1.curselection()
+    if Index:
+        Listbox1.delete(Index)
+        Listbox1.insert(Index, "Unavailable")
+def send():
+    Index = Listbox1.curselection()
+    if Index:
+        Listbox1.delete(Index)
+        Listbox1.insert(END,Entry1.get() + ", by " + Entry2.get() + ", Book " + Entry3.get())
+
 Button1 = Button(root, text = "Add book", bd = 4, fg = "black", command = add)
-Button2 = Button(root, text = "Issue book", bd = 4, fg = "black")
-Button3 = Button(root, text = "Return book", bd = 4, fg = "black")
+Button2 = Button(root, text = "Issue book", bd = 4, fg = "black", command = issue)
+Button3 = Button(root, text = "Return book", bd = 4, fg = "black", command = send)
 Listbox1 = Listbox(root, width = 45, height = 10, background = "silver")
 Label1.place(x = 50, y = 0)
 Label2.place(x = 75, y = 25)
