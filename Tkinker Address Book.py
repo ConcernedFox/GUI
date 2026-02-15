@@ -19,7 +19,13 @@ def open():
     else:
         global Dictionary
         Dictionary = eval(GHI.read())
-Button1 = Button(root, text = "Open",bd = 4, fg = "black")
+        for j in Dictionary:
+            Listbox1.insert(END, j)
+Button1 = Button(root, text = "Open",bd = 4, fg = "black", command = open)
+def edit():
+    v = Listbox1.curselection()
+    w = Listbox1.get(v)
+    x = Dictionary[w]
 Button2 = Button(root, text = "Edit",bd = 4, fg = "black")
 def delete():
     Index = Listbox1.curselection()
